@@ -190,8 +190,6 @@ void DisableOpenGL (HWND hwnd, HDC hDC, HGLRC hRC)
 
 #endif // WIN32
 
-#define __linux__
-
 #ifdef __linux__
 
 #include <unistd.h>
