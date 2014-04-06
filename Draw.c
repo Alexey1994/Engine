@@ -1,9 +1,9 @@
 #include <GL/gl.h>
 #include "Render.h"
-//#include <windows.h>
 #include "GUI.h"
 #include "List.h"
 #include "Font.h"
+#include "Load.h"
 
 void draw(GLfloat aspect, GLfloat mouse_coord_x, GLfloat mouse_coord_y, GLboolean *bQuit)
 {
@@ -16,6 +16,7 @@ void draw(GLfloat aspect, GLfloat mouse_coord_x, GLfloat mouse_coord_y, GLboolea
     matrix[0]=1.0f/aspect;
     if(verify)
     {
+        load_texture("a.tga");
         f=load_font("a.fnt");
        // if(f==0) printf("error");
 
@@ -36,8 +37,14 @@ void draw(GLfloat aspect, GLfloat mouse_coord_x, GLfloat mouse_coord_y, GLboolea
     glLoadMatrixf(matrix);
         glRasterPos2f(0,0);
         //glPrint(b);
-
-
+        glColor3f(1,1,1);
+        glEnable(GL_TEXTURE_2D);
+glBegin(GL_QUADS);
+    glTexCoord2f(0,0); glVertex2f(0,0);
+    glTexCoord2f(1,0); glVertex2f(1,0);
+    glTexCoord2f(1,1); glVertex2f(1,1);
+    glTexCoord2f(0,1); glVertex2f(0,1);
+glEnd();
     /*button("",-1,-1,1,1,mouse_coord_x,mouse_coord_y,a+5);*/
 static float i=0;
         if(button("EXIT", 0.85*aspect+i, 0.95, 0.95*aspect+i, 1, mouse_coord_x, mouse_coord_y, a))

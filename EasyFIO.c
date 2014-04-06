@@ -1,5 +1,4 @@
 #include "EasyFIO.h"
-#include "Math.h"
 #include <stdlib.h>
 
 char *get_name(FILE *f, char *ch)

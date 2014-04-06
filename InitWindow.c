@@ -3,8 +3,6 @@
 #include <GL/glext.h>
 #include <stdio.h>
 
-//#define WIN32
-
 void draw(GLfloat aspect, GLfloat mouse_coord_x, GLfloat mouse_coord_y, GLboolean *bQuit);
 void init_OpenGL();
 

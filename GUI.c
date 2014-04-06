@@ -1,5 +1,4 @@
 #include "GUI.h"
-//#include <windows.h>
 #include <GL/gl.h>
 #include "Interface.h"
 #include <stdio.h>
